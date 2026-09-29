@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #F3EFE6;
+  --color-surface: #FAF8F5;
+  --color-line: #DCD6C8;
+  --color-gold: #A38A52;
+  --color-bronze: #8A7243;
+  --color-bronze-ink: #6E5A31;
+  --color-ink: #1C1B18;
+  --color-muted: #5C584D;
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Double-lined Baroque border. Leave ~4px of space around framed elements. */
+.frame {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  outline: 1px solid var(--color-line);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-bronze-ink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
